@@ -199,7 +199,7 @@
 		 * Google Map
 		/* ---------------------------------------------- */
 
-		var mapLocation = new google.maps.LatLng(34.031428,-118.2071542,17);
+		var mapLocation = new google.maps.LatLng(40.705076,-74.009160);
 
 		map = new GMaps({
 			streetViewControl : false,
