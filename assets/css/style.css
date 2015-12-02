@@ -432,7 +432,7 @@ textarea.form-control {
 	background: #49e2d6;
 	width: 55px;
 	height: 1px;
-	margin: 30px auto;
+	margin: 20px auto;
 }
 
 .module-icon {
@@ -546,41 +546,6 @@ textarea.form-control {
 		 -o-background-size: cover;
 			background-size: cover;
 	height: 100%;
-	@media all and (max-width : 1200px) {
-  .photos img {
-   width: 12.5%;
-  }
-}
-
-@media all and (min-width : 993px) and (max-width : 1199px) {
-  .photos img {
-     width: 20%;
-  }
-}
-
-@media all and (min-width : 769px) and (max-width : 992px) {
-  .photos img {
-    width: 25%;
-  }
-}
-
-@media all and (min-width : 481px) and (max width : 768px) {
-  .photos img {
-     width: 33.3%;
-  }
-}
-
-@media all and (min-width : 321px) and (max width: 480px) {
-  .photos img {
-     width: 50%;
-  }
-}
-
-@media all and (max width: 320px) {
-  .photos img {
-     width: 100%;
-  }
-}
 
 }
 
