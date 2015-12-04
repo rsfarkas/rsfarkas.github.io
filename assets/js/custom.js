@@ -167,7 +167,7 @@
 			else {
 				$.ajax({
 					type: 'POST',
-					url: 'assets/php/contactForm.php',
+					url: '//formspree.io/roxannesfarkas@gmail.com',
 					dataType: 'json',
 					data: {
 						c_email: c_email,
