@@ -54,45 +54,20 @@
 			$(".js-height-full").height($(window).height());
 		});
 
+		
 		/* ---------------------------------------------- /*
-		 * Twitter
-		/* ---------------------------------------------- */
+		 * Instagram
+		 /* ---------------------------------------------- */
+		
+    var feed = new Instafeed({
+        get: 'user',
+        userId: '227009377',
+        clientId: '8729b10b0f41420b9481f93f98a89fba',
+        accessToken:'227009377.1677ed0.d52c27479e4f4ac0ac3a50c7a8ad8206'
+    });
+    
+    feed.run();
 
-		var twitterConfig = {
-			id: '345170787868762112',
-			domId: '',
-			maxTweets: 3,
-			enableLinks: true,
-			showUser: false,
-			customCallback: handleTweets
-		};
-
-		twitterFetcher.fetch(twitterConfig);
-
-		function handleTweets(tweets) {
-			var x = tweets.length;
-			var n = 0;
-			var html = '';
-			while(n < x) {
-				html += '<div class="owl-item">' + tweets[n] + '</div>';
-				n++;
-			}
-			$('.testimonials').html(html);
-
-			$('.twitter_retweet_icon').html('<i class="fa fa-retweet"></i>');
-			$('.twitter_reply_icon').html('<i class="fa fa-reply"></i>');
-			$('.twitter_fav_icon').html('<i class="fa fa-star"></i>');
-
-			$('.testimonials').owlCarousel({
-				singleItem: true,
-				navigation: false,
-				pagination: false,
-				slideSpeed : 300,
-				paginationSpeed : 400,
-				autoPlay: 5000,
-				navigationText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']
-			});
-		}
 
 		/* ---------------------------------------------- /*
 		 * Initialize shuffle plugin

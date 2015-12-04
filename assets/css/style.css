@@ -801,33 +801,12 @@ button.mfp-close {
 }
 
 /* ---------------------------------------------- /*
- * Twitter
+ * Instagram
 /* ---------------------------------------------- */
-
-#twitter {
-	text-align: center;
-}
-
-.tweet {
-	font-family: Georgia, "Times New Roman", Times, serif;
-	font-style: italic;
-	font-size: 16px;
-}
-
-.timePosted {
-	font: 400 13px/1.8 'Roboto Condensed', sans-serif;
-	text-transform: uppercase;
-	letter-spacing: 1px;
-	margin: 30px 0;
-	color: #777;
-}
-
-.interact {
-	margin: 0;
-}
-
-.interact a {
-	margin-right: 10px;
+#instafeed {
+	position:relative;
+	height:450px;
+	width 100%
 }
 
 /* ---------------------------------------------- /*
@@ -836,7 +815,7 @@ button.mfp-close {
 
 #map-section {
 	position: relative;
-	height: 450px;
+	height: 400px;
 	width: 100%;
 }
 
