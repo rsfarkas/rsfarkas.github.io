@@ -179,6 +179,7 @@
 						$('#contact-form button').append('<i class="fa fa-cog fa-spin"></i> Wait...');
 					},
 					success: function(result) {
+						result = result.serialize();
 						if(result.type == 'success') {
 							$('#contact-form .ajax-hidden').fadeOut(500);
 							responseMessage.html(result.message).fadeIn(500);
