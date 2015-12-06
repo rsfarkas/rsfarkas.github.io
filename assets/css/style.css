@@ -1074,7 +1074,8 @@ button.mfp-close {
 
 	.side-image {
 		position: relative;
-		height: 300px;
+		height: 485px;
+		width: 560px;
 	}
 
 	.portfolio-items-container .portfolio-item {
