@@ -623,9 +623,10 @@ textarea.form-control {
 	display: block;
 	list-style: none;
 	overflow: hidden;
-	width: 25%;
-	width: 33.333%;
+	width: 32%;
 	padding: 0;
+	height: 250px;
+	margin:5px;
 }
 
 .portfolio-items-container .portfolio-item img {
@@ -707,6 +708,7 @@ transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
 	background: #fff;
 	text-align: left;
 	max-width: 940px;
+	max-height:940px;
 	margin: 40px auto;
 }
 
@@ -804,10 +806,11 @@ button.mfp-close {
  * Instagram
 /* ---------------------------------------------- */
 #instafeed {
-	position:relative;
+	position:center;
 	height: 250px;
 	width: 100%;
 	margin: 20px 0px 20px 0px;
+	text-align:center;
 }
 
 .instaImg {
