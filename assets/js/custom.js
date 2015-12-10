@@ -65,11 +65,10 @@
         clientId: '8729b10b0f41420b9481f93f98a89fba',
         accessToken:'227009377.1677ed0.d52c27479e4f4ac0ac3a50c7a8ad8206',
         limit: '5',
-        template: '<a href="{{link}}"><img src="{{image}}" class="instaImg" height="{{height}}" width="{{width}}"/></a>'
+        template:'<a href="{{link}}"><img src="{{image}}" class="instaImg" height="{{height}}" width="{{width}}"/></a>'
     });
 
     feed.run();
-
 
 		/* ---------------------------------------------- /*
 		 * Initialize shuffle plugin
