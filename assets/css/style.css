@@ -721,6 +721,8 @@ transition: opacity 0.35s ease 0s, transform 0.35s ease 0s;
 .popup-content,
 .popup-callout {
 	padding: 60px 40px;
+	background: white;
+	
 }
 
 .popup-callout {
