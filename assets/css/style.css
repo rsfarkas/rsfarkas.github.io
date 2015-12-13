@@ -1138,6 +1138,13 @@ button.mfp-close {
 		letter-spacing: 3px;
 	}
 
+#map {
+	height: 450px;
+	width: 85%;
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 
 }
