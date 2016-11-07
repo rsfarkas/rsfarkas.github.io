@@ -1,111 +1,163 @@
+/*!
+ *	Template Functions
+*/
+
 (function($){
+
+	"use strict";
 
 	/* ---------------------------------------------- /*
 	 * Preloader
 	/* ---------------------------------------------- */
 
 	$(window).load(function() {
-		$('#status').fadeOut();
-		$('#preloader').delay(350).fadeOut('slow');
+		$('.page-loader').animate({width: 'toggle'});
 	});
 
 	$(document).ready(function() {
 
-		/* ---------------------------------------------- /*
-		 * Animated scrolling / Scroll Up
-		/* ---------------------------------------------- */
-
-		$('a[href*=#]').bind("click", function(e){
-			var anchor = $(this);
-			$('html, body').stop().animate({
-				scrollTop: $(anchor.attr('href')).offset().top
-			}, 1000);
+		$('.style-toggle').on('click', function(e) {
+			$('body').toggleClass('dark')
 			e.preventDefault();
 		});
 
-		$(window).scroll(function() {
-			if ($(this).scrollTop() > 100) {
-				$('.scroll-up').fadeIn();
-			} else {
-				$('.scroll-up').fadeOut();
+		var mobileTest;
+
+		/* ---------------------------------------------- /*
+		 * Mobile detect
+		/* ---------------------------------------------- */
+
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+			mobileTest = true;
+		} else {
+			mobileTest = false;
+		}
+
+		/* ---------------------------------------------- /*
+		 * Setting background of modules
+		/* ---------------------------------------------- */
+
+		$('[data-background]').each(function() {
+			$(this).css('background-image', 'url(' + $(this).attr('data-background') + ')');
+		});
+
+		/* ---------------------------------------------- /*
+		 * Show/Hide menu
+		/* ---------------------------------------------- */
+
+		$('.show-menu-btn').on('click', function() {
+			$(this).toggleClass('open');
+			$('.overlay-menu').toggleClass('active');
+			$('body').toggleClass('menu-opened');
+			return false;
+		});
+
+		$(window).keydown(function(e) {
+			if ($('.overlay-menu').hasClass('active')) {
+				if (e.which === 27) {
+					$('.show-menu-btn').removeClass('open');
+					$('.overlay-menu').removeClass('active');
+					$('body').removeClass('menu-opened');
+				}
 			}
 		});
 
 		/* ---------------------------------------------- /*
-		 * Navbar
+		 * Portfolio masonry
 		/* ---------------------------------------------- */
 
-		$('.header').sticky({
-			topSpacing: 0
+		var filters   = $('#filters'),
+			worksgrid = $('.row-portfolio');
+
+		$('a', filters).on('click', function() {
+			var selector = $(this).attr('data-filter');
+			$('.current', filters).removeClass('current');
+			$(this).addClass('current');
+			worksgrid.isotope({
+				filter: selector
+			});
+			return false;
 		});
 
-		$('body').scrollspy({
-			target: '.navbar-custom',
-			offset: 70
-		})
+		$(window).on('resize', function() {
+			$('.row-portfolio').imagesLoaded(function() {
+				$('.row-portfolio').isotope({
+					layoutMode: 'masonry',
+					itemSelector: '.portfolio-item',
+				});
+			});
+		}).resize();
 
 		/* ---------------------------------------------- /*
-		 * Background image.
+		 * Progress bars, counters, pie charts animations
 		/* ---------------------------------------------- */
 
-		$(".js-height-full").height($(window).height());
-
-		$(window).resize(function(){
-			$(".js-height-full").height($(window).height());
+		$('.progress-bar').each(function() {
+			$(this).appear(function() {
+				var percent = $(this).attr('aria-valuenow');
+				$(this).animate({'width' : percent + '%'});
+				$(this).parent('.progress').prev('.progress-title').find('.p-coutn').countTo({
+					from: 0,
+					to: percent,
+					speed: 900,
+					refreshInterval: 30
+				});
+			});
 		});
 
+		$('.counter-timer').each(function() {
+			$(this).appear(function() {
+				var number = $(this).attr('data-to');
+				$(this).countTo({
+					from: 0,
+					to: number,
+					speed: 1500,
+					refreshInterval: 10,
+					formatter: function (number, options) {
+						number = number.toFixed(options.decimals);
+						number = number.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+						return number;
+					}
+				});
+			});
+		});
+
+		$('.chart').each(function() {
+			$(this).appear(function() {
+				$(this).easyPieChart({
+					barColor:   "#252525",
+					trackColor: "#d9d9d9",
+					scaleColor: false,
+					lineCap:    'square',
+					size:       160,
+				});
+			});
+		});
 
 		/* ---------------------------------------------- /*
-		 * Instagram
-		 /* ---------------------------------------------- */
-
-    var feed = new Instafeed({
-        get: 'user',
-        userId: '227009377',
-        clientId: '8729b10b0f41420b9481f93f98a89fba',
-        accessToken:'227009377.1677ed0.d52c27479e4f4ac0ac3a50c7a8ad8206',
-        limit: '5',
-        template:'<a href="{{link}}"><img src="{{image}}" class="instaImg" height="{{height}}" width="{{width}}"/></a>'
-    });
-
-    feed.run();
-
-		/* ---------------------------------------------- /*
-		 * Initialize shuffle plugin
+		 * Lightbox, Gallery
 		/* ---------------------------------------------- */
 
-		var $portfolioContainer = $('.portfolio-items-container');
-
-		$('#filter li').on('click', function (e) {
-			e.preventDefault();
-
-			$('#filter li').removeClass('active');
-			$(this).addClass('active');
-
-			group = $(this).attr('data-group');
-			var groupName = $(this).attr('data-group');
-
-			$portfolioContainer.shuffle('shuffle', groupName );
+		$('.lightbox').magnificPopup({
+			type: 'image'
 		});
 
-		$('.simple-ajax-popup').magnificPopup({
-			type: 'ajax',
-			callbacks: {
-				parseAjax: function(mfpResponse) {
-					$.getScript('assets/js/jquery.fitvids.js');
-					$.getScript('assets/js/custom-portfolio.js');
-				},
+		$('[rel=gallery]').magnificPopup({
+			type: 'image',
+			gallery: {
+				enabled: true,
+				navigateByImgClick: true,
+				preload: [0,1]
+			},
+			image: {
+				titleSrc: 'title',
+				tError: 'The image could not be loaded.',
 			}
 		});
 
-		/* ---------------------------------------------- /*
-		 * WOW Animation When You Scroll
-		/* ---------------------------------------------- */
-
-		wow = new WOW({
-			mobile: false
+		$('.lightbox-video').magnificPopup({
+			type: 'iframe',
 		});
-		wow.init();
 
 		/* ---------------------------------------------- /*
 		 * A jQuery plugin for fluid width video embeds
@@ -113,7 +165,7 @@
 
 		$('body').fitVids();
 
-		/* ---------------------------------------------- /*
+/* ---------------------------------------------- /*
 		 * E-mail validation
 		/* ---------------------------------------------- */
 
@@ -172,35 +224,44 @@
 		});
 
 		/* ---------------------------------------------- /*
-		 * Google Map
+		 * Scroll Animation
 		/* ---------------------------------------------- */
 
-		var mapLocation = new google.maps.LatLng(40.705076,-74.009160);
+		$('.smoothscroll').on('click', function(e) {
+			var target  = this.hash;
+			var $target = $(target);
 
-		map = new GMaps({
-			streetViewControl : false,
-			overviewMapControl: false,
-			mapTypeControl: false,
-			zoomControl : false,
-			panControl : false,
-			scrollwheel: false,
-			center: mapLocation,
-			el: '#map',
-			zoom: 16,
-			styles: [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
+			$('html, body').stop().animate({
+				'scrollTop': $target.offset().top - header.height()
+			}, 600, 'swing');
+
+			e.preventDefault();
 		});
 
-		var image = new google.maps.MarkerImage('assets/images/map-icon.png',
-			new google.maps.Size(80, 80),
-			new google.maps.Point(0, 0),
-			new google.maps.Point(40, 40)
-		);
+		/* ---------------------------------------------- /*
+		 * Scroll top
+		/* ---------------------------------------------- */
 
-		map.addMarker({
-			position: mapLocation,
-			icon: image,
-			animation: google.maps.Animation.BOUNCE,
+		$('a[href="#top"]').on('click', function() {
+			$('html, body').animate({ scrollTop: 0 }, 'slow');
+			return false;
 		});
+
+		/* ---------------------------------------------- /*
+		 * Disable hover on scroll
+		/* ---------------------------------------------- */
+
+		var body = document.body,
+			timer;
+		window.addEventListener('scroll', function() {
+			clearTimeout(timer);
+			if (!body.classList.contains('disable-hover')) {
+				body.classList.add('disable-hover')
+			}
+			timer = setTimeout(function() {
+				body.classList.remove('disable-hover')
+			}, 100);
+		}, false);
 
 	});
 
