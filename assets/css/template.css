@@ -25,6 +25,10 @@ img {
     height: auto;
 }
 
+.imgPort{
+    max-width:30%;
+}
+
 iframe {
     border: 0;
 }
