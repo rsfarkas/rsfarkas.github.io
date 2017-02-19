@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Guardian</title>
+	<link rel="shortcut icon" type="image/png" href="assets/img/icon.png"/>
+	<link rel="shortcut icon" type="image/png" href="http://eg.com/favicon.png"/>
+	<link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet"> 
+	<link rel="stylesheet" href="assets/images/guardian/assets/css/styles.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet"> 
+	<script src="https://use.fontawesome.com/3b49916f98.js"></script>
+</head>
+
+<body>
+	<section id="home" class="hero">
+		<video class="background-video" src="assets/images/guardian/assets/video/shutterstock_v10516499.mov" id="bgvid" playsinline autoplay muted loop>
+		</video>
+		<h1 id="title" onclick='tagLine()'>Guardian</h1>
+		<div id="arrow">
+			<a href="#about">
+				<span class="bottom"></span>
+			</a>
+		</div>
+	</section>
+
+	<div>
+		<nav class="nav">
+			<li><a href="#home">Home</a></li>
+			<li><a href="#about">About</a></li>
+			<li><a href="#product">Product</a></li>
+			<li><a href="#testimonials">Testimonials</a></li>
+		</nav>
+	</div>
+
+	<section  id="about" class="about">
+		<h3 class="title">About Guardian:</h3>
+
+		<p>The New York Times reported recently that 1 in 4 women experience sexual assault on campus. The White House recently launched the “It’s On Us” campaign to end sexual assault on campus.</p>
+
+		<p>Statistics and campaigns can help raise awareness and educate the next generation. What protects our sisters, our mothers, our daughters and our loved ones right now?</p>
+
+		<p>Guardian is a sleek metal bracelet that is worn throughout the day. Easily mistaken for jewelry, each Guardian is a lifeline to the outside world. With just the press of a button, Guardian can share your location with friends or an emergency dispatch center.</p>
+
+		<p>Guardian will change 1 in 4 to <span id="nonein4">#nonein4.</span></p>
+	</section>
+
+	<section id ="product" class="features">
+		<h3 class="title">Product Features</h3>
+		<hr>
+
+		<ul class="grid" id="product2">
+			<li class="small"><img id="bracelet" src="assets/images/guardian/assets/img/HIGHLIGHTEDBRACELET.png"></img></li>
+			<li class="large">
+				<p>Guardian is a bracelet designed with classic styling. At a distance it appears to be a simple piece of jewelry.</p>
+				<p>The Guardian's premium band is made from gold plated steel in order to be able to withstand not only daily wear and tear, but also your adventures.<p>
+			</li>
+		</ul>
+		<ul class="grid">
+			<li class="small"><img id="iphone" src="assets/images/guardian/assets/img/homepageimg.png"></img></li>
+			<li class="large">
+				<p>The Guardian app lets you keep a roster of contacts that can receive your alerts. You can keep several friends or family members in your roster so someone will get your notification in real-time.</p>
+				<p> A wireless charging pad allows for easy overnight charging. Visit the settings section in the app to check current power level.</p>
+			</li>
+		</ul>
+		<ul class="grid" id="product2">
+			<li class="small"><img id="iphone" src="assets/images/guardian/assets/img/bracelethomescreen.png"></img></li>
+			<li class="large">
+				<p>Guardian has just 2 physical buttons each with different shapes your finger can recognize. The Guardian's button sends your roster an alert with your location.</p>
+				<p>The 911 button places a call to emergency response workers and plays a recording with your name, current location and phone number asking them to send help.</p>
+			</li>
+		</ul>
+	</section>
+
+	<section class="values">
+		<h3 class="title">Company Values</h3>
+		<hr>
+		<ul class="grid">
+			<li>
+				<i class="material-icons">gps_fixed</i>
+				<h4>Privacy</h4>
+				<p>Tracking data is only shared with your roster of friends, and emergency services. No data is sold to third parties.</p>
+			</li>
+			<li>
+				<i class="material-icons" id="green">terrain</i>
+				<h4>Responsibility</h4>
+				<p>The materials used to produce our bracelets are ethically sourced. Guardian believes in being a responsible global citizens.</p>
+			</li>
+			<li>
+				<i class="material-icons" id="pink">favorite</i>
+				<h4>Compassion</h4>
+				<p>Guardian is here to make the world a safe place. Spread the love!</p>
+			</li>
+		</div>
+	</section>
+
+	<section id ="testimonials" class="reviews">
+		<h3 class="title">Testimonials</h3>
+		<hr>
+		<div class="big-container">
+			<div class="slides fadeImage">
+				<p class="quote">I live in a Subway Desert. I have a long walk home from my stop after school. There have been several nights when I’ve called my friends just to have someone on the other line know where I was. Guardian gives me just a little more confidence.</p>
+				<p class="author">-Amanda</p>
+			</div>
+			<div class ="slides">
+				<p class="quote"> I keep my cellphone in my bag and finding it is as always a struggle. Emergency situations develop too quickly for me to visibly dig through my bag to find it, and call for help. Those few seconds can make all the difference</p>
+				<p class="author">-Emily</p>
+			</div>
+			<div class ="slides">
+				<p class="quote">Sometimes it’s just about feeling more comfortable. I like the feeling of knowing my friends are always with me. </p>
+				<p class="author">—Amy</p>
+			</div>
+		</div>	
+		<div class="buttons-container">
+			<div class="left-arrow" onclick="switchSlide(-1)">&#10094;</div>
+			<div class="right-arrow" onclick="switchSlide(1)">&#10095;</div>
+			<span class="dot-button myDot" onclick="currentSlide(1)"></span>
+			<span class="dot-button myDot" onclick="currentSlide(2)"></span>
+			<span class="dot-button myDot" onclick="currentSlide(3)"></span>
+		</div>
+		<!-- 	Slider is from an in class exercise -->
+	</section>
+	<footer>
+		<p>hello@guardian.com</p>
+		<p>	&copy; Guardian Inc</p>
+		<ul>
+			<li><a href="https://twitter.com/"><i class="fa fa-twitter-square"></i></a></li>
+			<li><a href="https://www.facebook.com/"><i class="fa fa-facebook-square"></i></a></li>
+			<li><a href="https://www.snapchat.com/"><i class="fa fa-snapchat-square"></i></a></li>
+		</ul>
+	</footer>
+
+	<script src="assets/js/guardian.js"/></script>
+</body>
+</html>

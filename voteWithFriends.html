@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Roxanne Farkas</title>
+  <!-- Favicons-->
+  <link rel="shortcut icon" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-touch-icon-114x114.png">
+  <!-- Web Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Suranna" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+  <!-- Bootstrap core CSS-->
+  <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Icon Fonts-->
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/css/themify-icons.css" rel="stylesheet">
+  <!-- Plugins-->
+  <link href="assets/css/magnific-popup.css" rel="stylesheet">
+  <link href="assets/css/vertical.min.css" rel="stylesheet">
+  <!-- Template core CSS-->
+  <link href="assets/css/template.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8">
+        <li id="backButton"><a href="portfolio.html"> <- Back</a></li>
+      </div>
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-1">
+        <h1>Vote with Friends</h1>
+      </div>
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <h2>Design Question</h2>
+        <p>Voicing a different opinion within a group of friends can be intimidating,leading to an inability for the group to make a decision or resulting in a decision with unhappy participants. How can we make group decision making easier and less stressful?</p>
+      </div>
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <h2>Concept</h2>
+        <p>Vote with Friends creates a live polling application, capable of running several polls at once. Users can create a poll and send its unique url to friends in order to watch live updates of the polling results.</p>
+      </div>
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <h2>Implementation</h2>
+                <ul>
+                    <li>-Node backend</li>
+                    <li>-Mongo data store via mLab</li>
+                    <li>-Express web server</li> 
+                    <li>-Socket.io client to server communication</li>
+                </ul>
+      </div>
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <h2>Product</h2>
+        <p>Step 1: The first page allows users to see current polls, as well as create a new one. When polls are generated they recieve a unique url, to allow for multiple polls to run at once.</p>
+      </div>    
+      <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+        <img src="assets/images/voteFriends/voteWithFriends.png" alt="hompage">
+      </div><!--img div-->  
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <p class="mt25">Step 2: Users access the second page either by clicking on a poll name from the main page, or by navigating to the poll's unique url. This url may be shared by the poll creater or other users. Users select one of the radio buttons and press submit in order to cast their vote.</p>
+      </div>        
+      <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+        <img src="assets/images/voteFriends/votingpage.png" alt="voting">
+      </div>
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <p class="mt25">Step 3: Once users vote they are redirected to the results page where they can see a bar graph tallying their groups votes. Because the data is sent via sockets as each new vote is cast the graph is updated.</p>
+      </div>    
+      <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">  
+        <img src="assets/images/voteFriends/friendsGraph.png" alt="Graph">
+      </div>  
+    </div><!--row-->
+  </div>
+</body>
+</html>
