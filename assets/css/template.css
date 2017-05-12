@@ -37,6 +37,10 @@ img {
     max-width:50% !important;
 }
 
+.mw40{
+    max-width:40% !important;
+}
+
 .tac{
     text-align:center;
 }

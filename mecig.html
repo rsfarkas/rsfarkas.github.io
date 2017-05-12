@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Roxanne Farkas</title>
+  <!-- Favicons-->
+  <link rel="shortcut icon" href="assets/images/favicon.png">
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/images/apple-touch-icon-114x114.png">
+  <!-- Web Fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Suranna" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css">
+  <!-- Bootstrap core CSS-->
+  <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Icon Fonts-->
+  <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+  <link href="assets/css/themify-icons.css" rel="stylesheet">
+  <!-- Plugins-->
+  <link href="assets/css/magnific-popup.css" rel="stylesheet">
+  <link href="assets/css/vertical.min.css" rel="stylesheet">
+  <!-- Template core CSS-->
+  <link href="assets/css/template.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-8">
+        <li id="backButton"><a href="portfolio.html"> <- Back</a></li>
+      </div>
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-1">
+        <h1>mE-Cig</h1>
+      </div>
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <h2>Design Question</h2>
+        <p>How might we motivate smokers to quit through the use of data and the group mentality?</p>
+      </div>
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <h2>Concept</h2>
+        <p>mE-Cig will help smokers using e-cigs to reduce their smoking by giving them a better understanding their vaping patterns and providing them with the support they need to quit.</p>
+        <p>mE-Cig features a phone and web-based application with an easy-to-comprehend data visualization that nudges users towards quitting. The technology service will involve the user’s friends and family to support them on the path to quitting.</p>
+      </div>
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <h2>Implementation</h2>
+                <ul>
+                    <li>-Node backend</li>
+                    <li>-Twillio - text message functionality</li>
+                    <li>-Nodemailer - email functionality</li> 
+                </ul>
+      </div>
+       <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <h2>Research</h2>
+        <ul>
+        <li>-Quitting buddies can be supportive friends or other individuals trying to quit</li>
+        <li>-The buddy system works well as buddies hold quitters accountable for their actions</li>
+        <li>-Buddies can help provide distractions from smoking and provide moral support during rough patches</li>
+        <li>-E-cigs are a safer way of quitting as they provide nicotine without the combustible products which contain carcinogens</li>
+        </li>-Smokers trying to quit are 60% more likely to be successful using e-cigs</li>
+        <li>-While e-cigs may have comparable levels of nicotine, it is possible to load cartridges with lower doses to help decrease addiction levels</li>
+        <li>-E-cigs have been approved as smoking cessation aids by The Medicines and Healthcare Products Regulatory Agency (MHRA), which has awarded a licence to British American Tobacco for its e-Voke device</li>
+      </ul>
+      </div>
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <h2>Working Prototype</h2>
+       <iframe width="438" height="930" src="https://projects.invisionapp.com/share/M5BLBJXTH#/screens" frameborder="0" allowfullscreen></iframe>
+      </div> 
+       <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <h2>Design Process</h2>
+         <img src="assets/images/cig/original.png" alt="Initial Screens">
+         <p>After developing and user testing the original look and feel, I realized the color palette did not appeal to my target audience. I decided to keep the color pallette in calming hues, but to use bolder and brighter to attract millenials. The app needed to feel cool and fun to use, not too much like a medical application.</p>
+          <img src="assets/images/cig/final.png" alt="Final Design">
+      </div>  
+       <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <h2>Design Process</h2>
+         <img class="mw40" src="assets/images/cig/text.png" alt="text">
+         <p>In order to test the functionality, I built a web version of the application. The application was able to send text messages using twilio, and emails using nodemailer. While the app would send text messages just before the data vis on the dashboard indicated it was likely the user would smoke, I created a twillio scheduler to be set manually.</p>
+        <img class="mw40" src="assets/images/cig/email.png" alt="email">
+         <p>Two emails were created, one to invite buddies and one to send weekly updates regarding the status of the user trying to quit, and recommending lower doses of e-liquid depending on progress.</p>
+      </div>  
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <h2>Product Video</h2>
+       <iframe src="https://player.vimeo.com/video/217189945" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>    
+    </div><!--row-->
+  </div>
+</body>
+</html>
