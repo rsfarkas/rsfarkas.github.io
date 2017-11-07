@@ -1396,6 +1396,9 @@ ul.page-numbers > li > span:hover {
     max-width: 768px;
 }
 
+.container-custom-portfolio{
+  max-width: 1000px;
+}
 .module {
     background-color: #ffffff;
     background-position: 50% 0;
