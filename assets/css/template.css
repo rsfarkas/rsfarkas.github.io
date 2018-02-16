@@ -24,7 +24,9 @@ img {
     max-width: 100%;
     height: auto;
 }
-
+#maxSize{
+  width:100%;
+}
 .imgPort{
     max-width:30%;
 }
@@ -1682,7 +1684,10 @@ ul.page-numbers > li > span:hover {
     width: 50%;
     padding: 0px 5px 10px;
 }
-
+.portfolio-item-big {
+    width: 100%;
+    padding: 0px 5px 10px;
+}
 .portfolio-wrapper {
     position: relative;
     overflow: hidden;
@@ -1749,12 +1754,23 @@ ul.page-numbers > li > span:hover {
     -webkit-transform: scale(1.2);
             transform: scale(1.2);
 }
-
+.portfolio-item-big:hover .portfolio-wrapper img {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+}
 .portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+}
+.portfolio-item-big:hover .portfolio-overlay {
     opacity: 1;
 }
 
 .portfolio-item:hover .portfolio-caption {
+    opacity: 1;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+}
+.portfolio-item-big:hover .portfolio-caption {
     opacity: 1;
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
